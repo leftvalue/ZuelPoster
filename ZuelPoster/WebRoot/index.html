@@ -1,56 +1,82 @@
 <!DOCTYPE html>
 <html lang="zh" class="no-js">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GradeMonitor Control Center</title>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
-    <script type="text/javascript" charset="utf8"
-            src="js/jquery.dataTables.js"></script>
-    <script src="js/layer.js"></script>
-    <script src="layui/layui.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GradeMonitor Control Center</title>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/marked.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+<script type="text/javascript" charset="utf8"
+	src="js/jquery.dataTables.js"></script>
+<script src="js/layer.js"></script>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<link rel="stylesheet" href="highlight/styles/androidstudio.css">
+<script src="highlight/highlight.pack.js"></script>
+<script src="js/conwork.js"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
 </head>
 <body>
-<div class="layui-form" id="top">
-    <div class="layui-form-item">
-        <label class="layui-form-label">学号</label>
-        <div class="layui-input-inline">
-            <input type="text" id="username" required lay-verify="required"
-                   placeholder="请输入学号" autocomplete="off" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">密码</label>
-        <div class="layui-input-inline">
-            <input type="password" id="password" required lay-verify="required"
-                   placeholder="请输入密码" autocomplete="off" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label"><img id="jpg" src=""><br></label>
-        <div class="layui-input-inline"></div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">验证码</label>
-        <div class="layui-input-inline">
-            <input type="text" id="xcode" required lay-verify="required"
-                   placeholder="看不清验证码刷新页面即可" autocomplete="off" class="layui-input">
-        </div>
-    </div>
-    <button class="layui-btn layui-btn-warm" id="login">登录</button>
-</div>
-<div class="layui-footer footer footer-demo" align="center">
-    <div class="layui-main">
-        <p>
-            2017 © <a href="http://www.leftvalue.top">leftvalue.top</a> Dick
-            license
-        </p>
-    </div>
-</div>
-<button id="changeStyle">haha</button>
+	<div id="form">
+		<div class="layui-form" id="top">
+			<div class="layui-form-item">
+				<label class="layui-form-label">学号</label>
+				<div class="layui-input-inline">
+					<input type="text" id="username" required lay-verify="required"
+						placeholder="请输入学号" autocomplete="off" class="layui-input"
+						value="201504000110">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">密码</label>
+				<div class="layui-input-inline">
+					<input type="password" id="password" required lay-verify="required"
+						placeholder="请输入密码" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label"><img id="jpg" src=""
+					onclick="getIMG()"><br></label>
+				<div class="layui-input-inline"></div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">验证码</label>
+				<div class="layui-input-inline">
+					<input type="text" id="xcode" required lay-verify="required"
+						placeholder="看不清验证码刷新页面即可" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<button class="layui-btn layui-btn-warm" id="login">登录</button>
+		</div>
+	</div>
+	<div id="result" style="display: none">
+		<fieldset class="layui-elem-field layui-field-title"
+			style="margin-top: 50px;">
+			<legend id="info"></legend>
+		</fieldset>
+		<button class="layui-btn layui-btn-warm" id="script1">运行脚本1</button>
+		<pre>
+			<code class="html" id="htmlShower">
+			&lt;label class="layui-form-label"&gt;验证码&lt;/label&gt;
+			&lt;div class="layui-input-inline"&gt;
+				&lt;input type="text" id="xcode" required lay-verify="required"
+					placeholder="看不清验证码刷新页面即可" autocomplete="off" class="layui-input"&gt;
+			&lt;/div&gt;
+			</code>
+		</pre>
+	</div>
+	<div class="layui-footer footer footer-demo" align="center">
+		<div class="layui-main">
+			<p>
+				2017 © <a href="http://www.leftvalue.top">leftvalue.top</a> Dick
+				license
+			</p>
+		</div>
+	</div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 /**
  * 主页js
  */
+var dt = null;
 var getIMG = function() {
 	$.ajax({
 		url : "login",
@@ -8,18 +9,38 @@ var getIMG = function() {
 		type : "post",
 		success : function(data) {
 			if (data != "0") {
-				$("#jpg").attr("src", "login/img");
+				$("#jpg").attr("src",
+						"login/img?" + new Date().getSeconds().toString());
 			}
 		}
 	})
 }
-var dt = null;
 $(document).ready(function() {
 	var datatables_source;
 	var course_table;
 	var info;
 	var writable = true;
-	getImg();
+
+	getIMG();
+	$("#script1").click(function() {
+		document.getElementById("htmlShower").className = 'html';
+		$.ajax({
+			url : "script/run",
+			async : true,
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			type : "post",
+			data : {
+				sid : 1
+			},
+			success : function(data) {
+				console.log("耗时" + data.time + "毫秒, " + data.state)
+				$("#htmlShower").html("" + data.result);
+				$('pre code').each(function(i, block) {
+				    hljs.highlightBlock(block);
+				  });
+			}
+		})
+	});
 	$("#login").click(function() {
 		var account = encodeInp($("#username").val());
 		var passwd = encodeInp($("#password").val());
@@ -41,11 +62,14 @@ $(document).ready(function() {
 						time : 20000, // 20s后自动关闭
 						btn : [ '哦好的' ]
 					}, function() {
-						location.reload();
+						// location.reload();
+						getIMG();
 					});
 				} else {
-					course_table = data.data;// 初始化课表信息
 					info = data.info;
+					$("#form").hide();
+					$("#result").show();
+					$("#info").html("" + info);
 				}
 			}
 		})

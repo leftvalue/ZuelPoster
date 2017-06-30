@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson-1.2.22.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jsoup-1.9.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dom4j-2.0.1.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

@@ -8,6 +8,7 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.PropKit;
 import com.jfinal.template.Engine;
+import com.leftvalue.model.Script;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.json.FastJsonFactory;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -61,7 +62,7 @@ public class MainConfig extends JFinalConfig {
 		arp.setShowSql(PropKit.getBoolean("devMode"));
 		arp.setDialect(new MysqlDialect());
 		/******** 在此添加数据库 表-Model 映射 *********/
-
+		arp.addMapping("script", "sid", Script.class);
 		// 添加到插件列表中
 		me.add(dbPlugin);
 		me.add(arp);

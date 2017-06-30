@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.safety.Whitelist;
-
 
 import org.jsoup.Connection.Response;
 
@@ -63,7 +61,7 @@ public class Core {
 		 * 登录成功，重设jsessionid
 		 */
 		String ori_html_kb = Jsoup.clean(kb.html(), Whitelist.relaxed());
-		return "{\"info\":\"" + info + "\",\"data\":" + "}";
+		return "{\"info\":\"" + info + "\",\"data\":" + "\"暂无\"}";
 	}
 
 }

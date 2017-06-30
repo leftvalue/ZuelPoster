@@ -12,6 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.safety.Whitelist;
 
 import com.alibaba.fastjson.JSONObject;
+import com.leftvalue.tools.HTML;
 
 public class ScriptRunner {
 	private static final int maxTime = 10_000;
@@ -19,7 +20,9 @@ public class ScriptRunner {
 	public static JSONObject run(String JSESSIONID, String url, String method, String[] paras, String regex) {
 		long start = System.currentTimeMillis();
 		Method m = null;
-		if (method.equals("post")) {
+		if (method == null) {
+			m = Method.GET;
+		} else if (method.equals("post")) {
 			m = Method.POST;
 		} else {
 			m = Method.GET;
@@ -28,7 +31,7 @@ public class ScriptRunner {
 		String result = "";
 		try {
 			Document doc = null;
-			if (paras.length == 0 || paras == null) {
+			if (paras == null || paras.length == 0) {
 				doc = Jsoup.connect(url).method(m).cookie("JSESSIONID", JSESSIONID).timeout(maxTime).execute().parse();
 			} else {
 				Map<String, String> datas = new HashMap<>();
@@ -39,8 +42,11 @@ public class ScriptRunner {
 						.execute().parse();
 			}
 
-			if ("".equals(regex)) {
-				result = Jsoup.clean(doc.html(), Whitelist.basic());// 这里的过滤级别有待商榷,另外是否需要设为用户可选?
+			if (regex == null || "".equals(regex)) {
+				// result = Jsoup.clean(doc.html(), Whitelist.basic());//
+				// 这里的过滤级别有待商榷,另外是否需要设为用户可选?
+				result = doc.html();
+				result = HTML.parse(result);
 			} else {
 				Pattern pattern = Pattern.compile(regex);
 				Matcher matcher = pattern.matcher(doc.html());
@@ -52,8 +58,9 @@ public class ScriptRunner {
 			}
 			object.put("state", "success");// 处理状态
 		} catch (Exception e) {
+			e.printStackTrace();
 			object.put("state", "fail");
-			result = e.toString();
+			result = "" + e;
 		}
 		object.put("result", result);// 处理结果
 		object.put("time", System.currentTimeMillis() - start);// 处理时间
