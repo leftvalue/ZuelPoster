@@ -31,7 +31,7 @@ public class ScriptRunner {
 		String result = "";
 		try {
 			Document doc = null;
-			if (paras == null || paras.length == 0) {
+			if (paras == null || paras.length < 2) {
 				doc = Jsoup.connect(url).method(m).cookie("JSESSIONID", JSESSIONID).timeout(maxTime).execute().parse();
 			} else {
 				Map<String, String> datas = new HashMap<>();
@@ -55,6 +55,7 @@ public class ScriptRunner {
 					result += matcher.group(i) + "\n";// 查找并拼接所有匹配结果
 					i++;
 				}
+				result = HTML.parse(result);
 			}
 			object.put("state", "success");// 处理状态
 		} catch (Exception e) {

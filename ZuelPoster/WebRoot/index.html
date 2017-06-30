@@ -2,16 +2,13 @@
 <html lang="zh" class="no-js">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GradeMonitor Control Center</title>
+<title>ZuelPoster</title>
 <script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/marked.js"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
 <script type="text/javascript" charset="utf8"
 	src="js/jquery.dataTables.js"></script>
 <script src="js/layer.js"></script>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
 <script src="layui/layui.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <link rel="stylesheet" href="highlight/styles/androidstudio.css">
@@ -21,8 +18,12 @@
 	hljs.initHighlightingOnLoad();
 </script>
 </head>
-<body>
-	<div id="form">
+<body class="layui-unselect">
+	<fieldset class="layui-elem-field">
+		<legend>ZuelPoster</legend>
+		<div class="layui-field-box">一个基于Jsoup的中南财大教务部在线模拟登录工具</div>
+	</fieldset>
+	<div id="form" class="layui-form">
 		<div class="layui-form" id="top">
 			<div class="layui-form-item">
 				<label class="layui-form-label">学号</label>
@@ -40,18 +41,20 @@
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label"><img id="jpg" src=""
-					onclick="getIMG()"><br></label>
-				<div class="layui-input-inline"></div>
-			</div>
-			<div class="layui-form-item">
 				<label class="layui-form-label">验证码</label>
 				<div class="layui-input-inline">
 					<input type="text" id="xcode" required lay-verify="required"
 						placeholder="看不清验证码刷新页面即可" autocomplete="off" class="layui-input">
 				</div>
 			</div>
-			<button class="layui-btn layui-btn-warm" id="login">登录</button>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<label class="layui-form-label"><img id="jpg" src=""
+						onclick="getIMG()" width="88"><br></label>
+					<div class="layui-input-inline"></div>
+					<button class="layui-btn" id="login">登录</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="result" style="display: none">
@@ -59,8 +62,80 @@
 			style="margin-top: 50px;">
 			<legend id="info"></legend>
 		</fieldset>
-		<button class="layui-btn layui-btn-warm" id="script1">运行脚本1</button>
-		<pre>
+		<blockquote class="layui-elem-quote">创建</blockquote>
+		<div class="layui-form-item">
+			<label class="layui-form-label">脚本名</label>
+			<div class="layui-input-inline">
+				<input type="text" required lay-verify="required" id="script_name"
+					autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">创建者昵称</label>
+			<div class="layui-input-inline">
+				<input type="text" required lay-verify="required" id="author"
+					placeholder="不写我就当作是姓名了啊~" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item layui-form-text">
+			<label class="layui-form-label">脚本描述</label>
+			<div class="layui-input-block">
+				<textarea id="script_description" placeholder="说一下此脚本是干什么的呗~"
+					class="layui-textarea"></textarea>
+			</div>
+		</div>
+		<hr>
+		<div class="layui-form-item">
+			<label class="layui-form-label">URL地址</label>
+			<div class="layui-input-block">
+				<input type="text" id="url" required lay-verify="required"
+					placeholder="请输入请求的URL" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">Regex匹配</label>
+			<div class="layui-input-inline">
+				<input type="text" required lay-verify="required" id="regex"
+					placeholder="我爱正则哈哈哈" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-form-mid layui-word-aux">如果不输入内容,则默认不进行正则查找,返回原html</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">Method</label>
+			<div class="layui-input-block">
+				<select id="method" lay-verify="required">
+					<option value="get">GET</option>
+					<option value="post">POST</option>
+				</select>
+			</div>
+		</div>
+		<hr>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button type="reset" class="layui-btn layui-btn-primary"
+					id="testScript">测试</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				<button class="layui-btn" id="saveScript">上传到脚本库</button>
+			</div>
+		</div>
+
+		<blockquote class="layui-elem-quote">在线脚本库</blockquote>
+		<table id="script_table" class="display" cellspacing="0" width="80%">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>脚本名</th>
+					<th>功能简介</th>
+					<th>上传者</th>
+					<th>上传日期</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+		</table>
+		<button class="layui-btn layui-btn-warm" onclick="listScripts()">加载脚本</button>
+		<button class="layui-btn layui-btn-warm" onclick="changePreviewType()"
+			id="showPattern">预览</button>
+		<pre id="source">
 			<code class="html" id="htmlShower">
 			&lt;label class="layui-form-label"&gt;验证码&lt;/label&gt;
 			&lt;div class="layui-input-inline"&gt;
@@ -69,6 +144,7 @@
 			&lt;/div&gt;
 			</code>
 		</pre>
+		<div id="preview"></div>
 	</div>
 	<div class="layui-footer footer footer-demo" align="center">
 		<div class="layui-main">
@@ -78,5 +154,6 @@
 			</p>
 		</div>
 	</div>
+</body>
 </body>
 </html>

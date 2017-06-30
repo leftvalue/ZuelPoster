@@ -11,7 +11,8 @@ import org.jsoup.safety.Whitelist;
 
 public class HTML {
 	public static String beauty(String html) {
-		String temp = Jsoup.clean(html, Whitelist.relaxed());
+		// String temp = Jsoup.clean(html, Whitelist.relaxed());
+		String temp = html;
 		Document document = null;
 		StringWriter writer = null;
 		HTMLWriter htmlWriter = null;

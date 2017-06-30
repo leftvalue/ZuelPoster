@@ -1,6 +1,5 @@
 package com.leftvalue.model;
 
-import java.time.LocalDateTime;
 
 import com.jfinal.plugin.activerecord.Model;
 import com.leftvalue.script.BaseScript;
@@ -29,7 +28,7 @@ public class Script extends Model<Script> {
 		temp.setScript_description(this.getStr("script_description"));
 		temp.setScript_name(this.getStr("script_name"));
 		temp.setUrl(this.getStr("url"));
-		// temp.setPushTime(LocalDateTime.parse(this.getTime("pushtime").toString()));//
+		// temp.setPushTime(LocalDateTime.parse(this.getTime("pushtime").toString()));
 		// 这里大概会报错吧,有网了再测数据库的返回值
 		temp.setNumber(this.getStr("number"));
 		return temp;
@@ -44,7 +43,9 @@ public class Script extends Model<Script> {
 	}
 
 	public String getPushTime() {
-		return this.getTime("pushtime").toString();
+		java.sql.Timestamp time = this.getTimestamp("pushtime");
+		System.out.println(time);
+		return time.toString();
 	}
 
 	public String getUrl() {

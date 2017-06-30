@@ -44,7 +44,7 @@ public class ScriptController extends Controller {
 			 * 为了确保上传脚本的质量,必须对其可用性进行确认
 			 */
 			JSONObject test = ScriptRunner.run(getCookie("JSESSIONID"), url, method, parameter, regex);
-			if (test.getString("state").equals("okay")) {
+			if (test.getString("state").equals("success")) {
 				// 可用脚本
 				boolean ifSuccess = script.store();
 				if (ifSuccess) {
@@ -64,8 +64,14 @@ public class ScriptController extends Controller {
 	 */
 	public void del() {
 		int sid = getParaToInt("sid");
+		// int len = Db.find("SELECT * FROM script where number='" +
+		// getCookie("number") + "'").size();
 		int effect = Db.update("DELETE FROM script WHERE sid=" + sid + " AND number='" + getCookie("number") + "'");
-		renderJson(ReturnValue.std_success("操作成功,影响了" + effect + "行数据"));
+		if (effect == 0) {
+			renderJson(ReturnValue.std_fail("不是创建者,无此项权限"));
+		} else {
+			renderJson(ReturnValue.std_success("操作成功,影响了" + effect + "行数据"));
+		}
 	}
 
 	/**
