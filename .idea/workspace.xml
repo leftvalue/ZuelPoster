@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2c6c7081-901c-412b-b634-cf0cefc5bded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/WebRoot/index.html" afterPath="$PROJECT_DIR$/ZuelPoster/WebRoot/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/WebRoot/js/main.js" afterPath="$PROJECT_DIR$/ZuelPoster/WebRoot/js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,33 +20,12 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ZuelPoster/WebRoot/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+            <state relative-caret-position="345">
+              <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#fieldset#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#7345#7351#1" expanded="true" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#7833#7837#0" expanded="true" />
-                <element signature="e#7867#7871#0" expanded="true" />
-                <element signature="e#7874#7878#0" expanded="true" />
-                <element signature="e#7884#7888#0" expanded="true" />
-                <element signature="e#7892#7896#0" expanded="true" />
-                <element signature="e#7926#7930#0" expanded="true" />
-                <element signature="e#7935#7939#0" expanded="true" />
-                <element signature="e#8069#8073#0" expanded="true" />
-                <element signature="e#8077#8081#0" expanded="true" />
-                <element signature="e#8085#8089#0" expanded="true" />
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1498885768000" expanded="true" signature="8507:8512" ph="..." />
+                <marker date="1498885768000" expanded="true" signature="8507:8520" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,9 +48,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.show()</find>
-      <find>.hide()</find>
       <find>#result</find>
       <find>#form</find>
+      <find>.hide()</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -273,12 +251,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498822128510</updated>
-      <workItem from="1498822130606" duration="5054000" />
+      <workItem from="1498822130606" duration="6743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5054000" />
+    <option name="totallyTimeSpent" value="6743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -327,33 +305,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ZuelPoster/WebRoot/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        <state relative-caret-position="345">
+          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#fieldset#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#table#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#7345#7351#1" expanded="true" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#7833#7837#0" expanded="true" />
-            <element signature="e#7867#7871#0" expanded="true" />
-            <element signature="e#7874#7878#0" expanded="true" />
-            <element signature="e#7884#7888#0" expanded="true" />
-            <element signature="e#7892#7896#0" expanded="true" />
-            <element signature="e#7926#7930#0" expanded="true" />
-            <element signature="e#7935#7939#0" expanded="true" />
-            <element signature="e#8069#8073#0" expanded="true" />
-            <element signature="e#8077#8081#0" expanded="true" />
-            <element signature="e#8085#8089#0" expanded="true" />
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1498885768000" expanded="true" signature="8507:8512" ph="..." />
+            <marker date="1498885768000" expanded="true" signature="8507:8520" ph="..." />
           </folding>
         </state>
       </provider>
