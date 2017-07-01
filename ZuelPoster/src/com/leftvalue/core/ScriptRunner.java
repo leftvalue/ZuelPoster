@@ -9,7 +9,6 @@ import java.util.regex.Pattern;
 
 import org.jsoup.Connection.Method;
 import org.jsoup.nodes.Document;
-import org.jsoup.safety.Whitelist;
 
 import com.alibaba.fastjson.JSONObject;
 import com.leftvalue.tools.HTML;

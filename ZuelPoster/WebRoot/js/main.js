@@ -44,6 +44,7 @@ var runScript = function(sid) {
 			success : function(data) {
 				console.log("耗时" + data.time + "毫秒, " + data.state);
 				$("#htmlShower").html("" + data.result);
+				element.progress('process1', '0%');
 				initPreview(data.result);
 				$('pre code').each(function(i, block) {
 					hljs.highlightBlock(block);
@@ -214,6 +215,10 @@ $(document)
 																		.html(
 																				""
 																						+ data.result);
+																element
+																		.progress(
+																				'process1',
+																				'0%');// 归零进度条
 																initPreview(data.result);
 																$('pre code')
 																		.each(
