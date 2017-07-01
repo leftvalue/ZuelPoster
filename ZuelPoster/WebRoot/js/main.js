@@ -1,6 +1,10 @@
 /**
  * 主页js
  */
+var element;
+layui.use('element', function() {
+	element = layui.element();
+});
 var dt = null;// script table数据源
 var scripts = null;// 当前使用脚本
 var ifLogin = false;
@@ -129,6 +133,10 @@ var listScripts = function() {
 $(document)
 		.ready(
 				function() {
+					$('#preview').click(function(e) {// 预览窗格内不能进行实际操作
+						e.preventDefault();// 阻止鼠标的默认点击事件
+						e.stopImmediatePropagation();// 阻止冒泡事件发生
+					});
 					var info;
 					listScripts();
 					$("#login")
@@ -158,10 +166,12 @@ $(document)
 																	.msg("验证码或密码错误");
 															getIMG();
 														} else {
-															ifLogin = true;//标记登录完成
+															ifLogin = true;// 标记登录完成
 															info = data.info;
-															$("#beforelogin").hide();
-															$("#afterlogin").show();
+															$("#beforelogin")
+																	.hide();
+															$("#afterlogin")
+																	.show();
 															$("#info").html(
 																	"" + info);
 															listScripts();
@@ -270,4 +280,17 @@ $(document)
 											layer.msg("请先登录获取相关权限!");
 										}
 									})
+					$("#scroll1")
+							.on(
+									'scroll',
+									function() {
+										element
+												.progress(
+														'process1',
+														($("#scroll1")
+																.scrollTop()
+																/ ($("#source")
+																		.height() - 299.5) * 100)
+																+ '%');
+									});
 				})
