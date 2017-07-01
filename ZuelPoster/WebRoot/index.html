@@ -1,164 +1,171 @@
 <!DOCTYPE html>
 <html lang="zh" class="no-js">
 <head>
-    <meta charset="UTF-8"/>
-    <title>ZuelPoster</title>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8"
-            src="js/jquery.dataTables.js"></script>
-    <script src="js/layer.js"></script>
-    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
-    <script src="layui/layui.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <link rel="stylesheet" href="highlight/styles/androidstudio.css">
-    <script src="highlight/highlight.pack.js"></script>
-    <script src="js/conwork.js"></script>
-    <script>
-        hljs.initHighlightingOnLoad();
-    </script>
+<meta charset="UTF-8" />
+<title>ZuelPoster</title>
+<script src="js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8"
+	src="js/jquery.dataTables.js"></script>
+<script src="js/layer.js"></script>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<link rel="stylesheet" href="highlight/styles/androidstudio.css">
+<script src="highlight/highlight.pack.js"></script>
+<script src="js/conwork.js"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
 </head>
 <body class="layui-unselect">
-<fieldset class="layui-elem-field">
-    <legend>ZuelPoster</legend>
-    <div class="layui-field-box">一个基于Jsoup的中南财大教务部在线模拟登录工具</div>
-</fieldset>
-<div id="result">
-    <fieldset class="layui-elem-field layui-field-title"
-              style="margin-top: 50px;">
-        <legend id="info"></legend>
-    </fieldset>
-    <div class="layui-tab">
-        <ul class="layui-tab-title">
-            <li class="layui-this">获取权限</li>
-            <li>脚本创建</li>
-            <li>在线脚本库</li>
-        </ul>
-        <div class="layui-tab-content">
-            <div class="layui-tab-item layui-show">
-                <div id="form" class="layui-form">
-                    <div class="layui-form" id="top">
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">学号</label>
-                            <div class="layui-input-inline">
-                                <input type="text" id="username" required lay-verify="required"
-                                       placeholder="请输入学号" autocomplete="off" class="layui-input"
-                                       value="201504000110">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">密码</label>
-                            <div class="layui-input-inline">
-                                <input type="password" id="password" required
-                                       lay-verify="required" placeholder="请输入密码" autocomplete="off"
-                                       class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">验证码</label>
-                            <div class="layui-input-inline">
-                                <input type="text" id="xcode" required lay-verify="required"
-                                       placeholder="看不清验证码刷新页面即可" autocomplete="off"
-                                       class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <div class="layui-input-block">
-                                <label class="layui-form-label"><img id="jpg" src=""
-                                                                     onclick="getIMG()" width="88"><br></label>
-                                <div class="layui-input-inline"></div>
-                                <button class="layui-btn" id="login">登录</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="layui-tab-item">
-                <blockquote class="layui-elem-quote">创建</blockquote>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">脚本名</label>
-                    <div class="layui-input-inline">
-                        <input type="text" required lay-verify="required"
-                               id="script_name" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">创建者昵称</label>
-                    <div class="layui-input-inline">
-                        <input type="text" required lay-verify="required" id="author"
-                               placeholder="不写我就当作是姓名了啊~" autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">脚本描述</label>
-                    <div class="layui-input-block">
-							<textarea id="script_description" placeholder="说一下此脚本是干什么的呗~"
-                                      class="layui-textarea"></textarea>
-                    </div>
-                </div>
-                <hr>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">URL地址</label>
-                    <div class="layui-input-block">
-                        <input type="text" id="url" required lay-verify="required"
-                               placeholder="请输入请求的URL" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">Regex匹配</label>
-                    <div class="layui-input-inline">
-                        <input type="text" required lay-verify="required" id="regex"
-                               placeholder="我爱正则哈哈哈" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">如果不输入内容,则默认不进行正则查找,返回原html</div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">Method</label>
-                    <div class="layui-input-block">
-                        <select id="method" lay-verify="required">
-                            <option value="get">GET</option>
-                            <option value="post">POST</option>
-                        </select>
-                    </div>
-                </div>
-                <hr>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button type="reset" class="layui-btn layui-btn-primary"
-                                id="testScript">测试
-                        </button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        <button class="layui-btn" id="saveScript">上传到脚本库</button>
-                    </div>
-                </div>
-            </div>
-            <div class="layui-tab-item">
-                <blockquote class="layui-elem-quote">在线脚本库</blockquote>
-                <table id="script_table" class="display" cellspacing="0"
-                       width="80%">
-                    <thead>
-                    <tr>
-                        <th>编号</th>
-                        <th>脚本名</th>
-                        <th>功能简介</th>
-                        <th>上传者</th>
-                        <th>上传日期</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="layui-tab">
-        <ul class="layui-tab-title">
-            <li class="layui-this">Source</li>
-            <li>Preview</li>
-        </ul>
-        <div class="layui-tab-content">
-            <div class="layui-tab-item layui-show">
-                 <pre id="source" width="80%" align="center">
+	<fieldset class="layui-elem-field">
+		<legend>ZuelPoster</legend>
+		<div class="layui-field-box">一个基于Jsoup的中南财大教务部在线模拟登录工具</div>
+	</fieldset>
+	<fieldset class="layui-elem-field layui-field-title"
+		style="margin-top: 50px;">
+		<legend id="info"></legend>
+	</fieldset>
+	<div class="layui-tab">
+		<ul class="layui-tab-title">
+			<li class="layui-this">获取权限</li>
+			<li>脚本创建</li>
+			<li>在线脚本库</li>
+		</ul>
+		<div class="layui-tab-content">
+			<div class="layui-tab-item layui-show">
+				<div id="beforelogin" class="layui-form">
+					<div class="layui-form" id="top">
+						<div class="layui-form-item">
+							<label class="layui-form-label">学号</label>
+							<div class="layui-input-inline">
+								<input type="text" id="username" required lay-verify="required"
+									placeholder="请输入学号" autocomplete="off" class="layui-input"
+									value="201504000110">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">密码</label>
+							<div class="layui-input-inline">
+								<input type="password" id="password" required
+									lay-verify="required" placeholder="请输入密码" autocomplete="off"
+									class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">验证码</label>
+							<div class="layui-input-inline">
+								<input type="text" id="xcode" required lay-verify="required"
+									placeholder="看不清验证码刷新页面即可" autocomplete="off"
+									class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<label class="layui-form-label"><img id="jpg" src=""
+									onclick="getIMG()" width="88"><br></label>
+								<div class="layui-input-inline"></div>
+								<button class="layui-btn" id="login">登录</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="afterlogin" style="display: none;">
+					<blockquote class="layui-elem-quote">已获取相关权限</blockquote>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<label class="layui-form-label"><img id="jpg" src=""
+								onclick="getIMG()" width="88"><br></label>
+							<div class="layui-input-inline"></div>
+							<button class="layui-btn" id="logout" onclick="window.location.reload()">登出</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-tab-item">
+				<blockquote class="layui-elem-quote">创建</blockquote>
+				<div class="layui-form-item">
+					<label class="layui-form-label">脚本名</label>
+					<div class="layui-input-inline">
+						<input type="text" required lay-verify="required" id="script_name"
+							autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">创建者昵称</label>
+					<div class="layui-input-inline">
+						<input type="text" required lay-verify="required" id="author"
+							placeholder="不写我就当作是姓名了啊~" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">脚本描述</label>
+					<div class="layui-input-block">
+						<textarea id="script_description" placeholder="说一下此脚本是干什么的呗~"
+							class="layui-textarea"></textarea>
+					</div>
+				</div>
+				<hr>
+				<div class="layui-form-item">
+					<label class="layui-form-label">URL地址</label>
+					<div class="layui-input-block">
+						<input type="text" id="url" required lay-verify="required"
+							placeholder="请输入请求的URL" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">Regex匹配</label>
+					<div class="layui-input-inline">
+						<input type="text" required lay-verify="required" id="regex"
+							placeholder="我爱正则哈哈哈" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux">如果不输入内容,则默认不进行正则查找,返回原html</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">Method</label>
+					<div class="layui-input-block">
+						<select id="method" lay-verify="required">
+							<option value="get">GET</option>
+							<option value="post">POST</option>
+						</select>
+					</div>
+				</div>
+				<hr>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button type="reset" class="layui-btn layui-btn-primary"
+							id="testScript">测试</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						<button class="layui-btn" id="saveScript">上传到脚本库</button>
+					</div>
+				</div>
+			</div>
+			<div class="layui-tab-item">
+				<blockquote class="layui-elem-quote">在线脚本库</blockquote>
+				<table id="script_table" class="display" cellspacing="0" width="80%">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>脚本名</th>
+							<th>功能简介</th>
+							<th>上传者</th>
+							<th>上传日期</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="layui-tab">
+		<ul class="layui-tab-title">
+			<li class="layui-this">Source</li>
+			<li>Preview</li>
+		</ul>
+		<div class="layui-tab-content">
+			<div class="layui-tab-item layui-show">
+				<pre id="source" width="80%" align="center">
 			<code class="html" id="htmlShower">
 			&lt;label class="layui-form-label"&gt;验证码&lt;/label&gt;
 			&lt;div class="layui-input-inline"&gt;
@@ -167,27 +174,25 @@
 			&lt;/div&gt;
 			</code>
 	    	</pre>
-            </div>
-            <div class="layui-tab-item" id="preview">暂无</div>
-        </div>
-    </div>
-
-    <script>
-        //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
-        layui.use('element', function () {
-            var element = layui.element();
-        });
-    </script>
-    <div ></div>
-</div>
-<div class="layui-footer footer footer-demo" align="center">
-    <div class="layui-main">
-        <p>
-            2017 © <a href="http://www.leftvalue.top">leftvalue.top</a> Dick
-            license
-        </p>
-    </div>
-</div>
+			</div>
+			<div class="layui-tab-item" id="preview">暂无</div>
+		</div>
+	</div>
+	<script>
+		//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+		layui.use('element', function() {
+			var element = layui.element();
+		});
+	</script>
+	<div></div>
+	<div class="layui-footer footer footer-demo" align="center">
+		<div class="layui-main">
+			<p>
+				2017 © <a href="http://www.leftvalue.top">leftvalue.top</a> Dick
+				license
+			</p>
+		</div>
+	</div>
 </body>
 </body>
 </html>
