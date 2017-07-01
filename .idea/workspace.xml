@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c6c7081-901c-412b-b634-cf0cefc5bded" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/WebRoot/WEB-INF/classes/.gitignore" afterPath="$PROJECT_DIR$/ZuelPoster/WebRoot/WEB-INF/classes/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/WebRoot/index.html" afterPath="$PROJECT_DIR$/ZuelPoster/WebRoot/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/WebRoot/js/main.js" afterPath="$PROJECT_DIR$/ZuelPoster/WebRoot/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/core/ScriptRunner.java" afterPath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/core/ScriptRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/model/Script.java" afterPath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/model/Script.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/tools/HTML.java" afterPath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/tools/HTML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/controller/LoginController.java" afterPath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/controller/ScriptController.java" afterPath="$PROJECT_DIR$/ZuelPoster/src/com/leftvalue/controller/ScriptController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZuelPoster/src/top/leftvalue/login/Core.java" afterPath="$PROJECT_DIR$/ZuelPoster/src/top/leftvalue/login/Core.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,34 +25,27 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ZuelPoster/WebRoot/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="105" column="33" lean-forward="true" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+            <state relative-caret-position="492">
+              <caret line="149" column="24" lean-forward="false" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
               <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4960#4964#0" expanded="true" />
-                <marker date="1498846382000" expanded="true" signature="4328:4354" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="4328:4363" ph="..." />
-                <marker date="1498846382000" expanded="false" signature="4494:4659" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="4505:4648" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="4514:4636" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="4616:4622" ph=" " />
-                <marker date="1498846382000" expanded="true" signature="4814:4845" ph="..." />
-                <marker date="1498846382000" expanded="false" signature="4865:5184" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="4904:5175" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="4909:4913" ph="&lt;" />
-                <marker date="1498846382000" expanded="true" signature="4943:4947" ph="&gt;" />
-                <marker date="1498846382000" expanded="true" signature="4950:4954" ph="&lt;" />
-                <marker date="1498846382000" expanded="true" signature="4960:4964" ph="&gt;" />
-                <marker date="1498846382000" expanded="true" signature="5002:5006" ph="&gt;" />
-                <marker date="1498846382000" expanded="true" signature="5011:5015" ph="&lt;" />
-                <marker date="1498846382000" expanded="true" signature="5145:5149" ph="&gt;" />
-                <marker date="1498846382000" expanded="true" signature="5153:5157" ph="&lt;" />
-                <marker date="1498846382000" expanded="true" signature="5161:5165" ph="&gt;" />
-                <marker date="1498846382000" expanded="true" signature="5281:5421" ph="..." />
-                <marker date="1498846382000" expanded="false" signature="5308:5413" ph="..." />
-                <marker date="1498846382000" expanded="true" signature="5315:5404" ph="..." />
+                <element signature="n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#fieldset#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#7251#7257#1" expanded="true" />
+                <element signature="e#7739#7743#0" expanded="true" />
+                <element signature="e#7773#7777#0" expanded="true" />
+                <element signature="e#7780#7784#0" expanded="true" />
+                <element signature="e#7790#7794#0" expanded="true" />
+                <element signature="e#7798#7802#0" expanded="true" />
+                <element signature="e#7832#7836#0" expanded="true" />
+                <element signature="e#7841#7845#0" expanded="true" />
+                <element signature="e#7975#7979#0" expanded="true" />
+                <element signature="e#7983#7987#0" expanded="true" />
+                <element signature="e#7991#7995#0" expanded="true" />
+                <marker date="1498878417000" expanded="false" signature="8408:8541" ph="..." />
               </folding>
             </state>
           </provider>
@@ -62,14 +54,22 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ZuelPoster/WebRoot/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="253" column="59" lean-forward="false" selection-start-line="253" selection-start-column="59" selection-end-line="253" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="3885">
+              <caret line="259" column="32" lean-forward="true" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+              <folding>
+                <marker date="1498878740000" expanded="true" signature="4051:4057" ph=" " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>.show()</find>
+      <find>.hide()</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -269,18 +269,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498822128510</updated>
-      <workItem from="1498822130606" duration="2996000" />
+      <workItem from="1498822130606" duration="4591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2996000" />
+    <option name="totallyTimeSpent" value="4591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -313,43 +313,38 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ZuelPoster/WebRoot/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="105" column="33" lean-forward="true" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+        <state relative-caret-position="492">
+          <caret line="149" column="24" lean-forward="false" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
           <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4960#4964#0" expanded="true" />
-            <marker date="1498846382000" expanded="true" signature="4328:4354" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="4328:4363" ph="..." />
-            <marker date="1498846382000" expanded="false" signature="4494:4659" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="4505:4648" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="4514:4636" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="4616:4622" ph=" " />
-            <marker date="1498846382000" expanded="true" signature="4814:4845" ph="..." />
-            <marker date="1498846382000" expanded="false" signature="4865:5184" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="4904:5175" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="4909:4913" ph="&lt;" />
-            <marker date="1498846382000" expanded="true" signature="4943:4947" ph="&gt;" />
-            <marker date="1498846382000" expanded="true" signature="4950:4954" ph="&lt;" />
-            <marker date="1498846382000" expanded="true" signature="4960:4964" ph="&gt;" />
-            <marker date="1498846382000" expanded="true" signature="5002:5006" ph="&gt;" />
-            <marker date="1498846382000" expanded="true" signature="5011:5015" ph="&lt;" />
-            <marker date="1498846382000" expanded="true" signature="5145:5149" ph="&gt;" />
-            <marker date="1498846382000" expanded="true" signature="5153:5157" ph="&lt;" />
-            <marker date="1498846382000" expanded="true" signature="5161:5165" ph="&gt;" />
-            <marker date="1498846382000" expanded="true" signature="5281:5421" ph="..." />
-            <marker date="1498846382000" expanded="false" signature="5308:5413" ph="..." />
-            <marker date="1498846382000" expanded="true" signature="5315:5404" ph="..." />
+            <element signature="n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#fieldset#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#7251#7257#1" expanded="true" />
+            <element signature="e#7739#7743#0" expanded="true" />
+            <element signature="e#7773#7777#0" expanded="true" />
+            <element signature="e#7780#7784#0" expanded="true" />
+            <element signature="e#7790#7794#0" expanded="true" />
+            <element signature="e#7798#7802#0" expanded="true" />
+            <element signature="e#7832#7836#0" expanded="true" />
+            <element signature="e#7841#7845#0" expanded="true" />
+            <element signature="e#7975#7979#0" expanded="true" />
+            <element signature="e#7983#7987#0" expanded="true" />
+            <element signature="e#7991#7995#0" expanded="true" />
+            <marker date="1498878417000" expanded="false" signature="8408:8541" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ZuelPoster/WebRoot/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="253" column="59" lean-forward="false" selection-start-line="253" selection-start-column="59" selection-end-line="253" selection-end-column="59" />
-          <folding />
+        <state relative-caret-position="3885">
+          <caret line="259" column="32" lean-forward="true" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+          <folding>
+            <marker date="1498878740000" expanded="true" signature="4051:4057" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>

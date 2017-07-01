@@ -26,8 +26,7 @@ public class ScriptController extends Controller {
 		String script_type = getPara("script_type");
 		// 允许匿名用户上传脚本,但必须在数据库内保留上传者的学号,以便进行删除以及修改操作时鉴权
 		String author = getPara("author");
-		String number = getCookie("number");
-
+		String number = "" + getRequest().getSession().getAttribute("number");
 		String script_name = getPara("script_name");
 		String script_description = getPara("script_description");
 		if (script_type == null || script_type.equals("")) {
@@ -43,7 +42,8 @@ public class ScriptController extends Controller {
 			/**
 			 * 为了确保上传脚本的质量,必须对其可用性进行确认
 			 */
-			JSONObject test = ScriptRunner.run(getCookie("JSESSIONID"), url, method, parameter, regex);
+			JSONObject test = ScriptRunner.run("" + getRequest().getSession().getAttribute("JSESSIONID"), url, method,
+					parameter, regex);
 			if (test.getString("state").equals("success")) {
 				// 可用脚本
 				boolean ifSuccess = script.store();
@@ -66,7 +66,8 @@ public class ScriptController extends Controller {
 		int sid = getParaToInt("sid");
 		// int len = Db.find("SELECT * FROM script where number='" +
 		// getCookie("number") + "'").size();
-		int effect = Db.update("DELETE FROM script WHERE sid=" + sid + " AND number='" + getCookie("number") + "'");
+		int effect = Db.update("DELETE FROM script WHERE sid=" + sid + " AND number='"
+				+ getRequest().getSession().getAttribute("number") + "'");
 		if (effect == 0) {
 			renderJson(ReturnValue.std_fail("不是创建者,无此项权限"));
 		} else {
@@ -89,7 +90,7 @@ public class ScriptController extends Controller {
 		String url = getPara("url");
 		String[] parameter = getParaValues("parameter");
 		String method = getPara("method");
-		String JSESSIONID = getCookie("JSESSIONID");
+		String JSESSIONID = "" + getRequest().getSession().getAttribute("JSESSIONID");
 		String result = HtmlLoader.load(JSESSIONID, url, method, parameter);
 		renderText(result);
 	}
@@ -98,8 +99,8 @@ public class ScriptController extends Controller {
 	 * 列出'我'创建的所有脚本,以便进行删除删改操作
 	 */
 	public void my() {
-		String result = JSON
-				.toJSONString(Script.DAO.find("select * from script where number='" + getCookie("number") + "'"));
+		String result = JSON.toJSONString(Script.DAO
+				.find("select * from script where number='" + getRequest().getSession().getAttribute("number") + "'"));
 		renderJson(result);
 	}
 
@@ -111,7 +112,7 @@ public class ScriptController extends Controller {
 		Script mn = Script.DAO.findById(sid);
 		if (mn != null) {
 			BaseScript script = mn.convert();
-			String JSESSIONID = getCookie("JSESSIONID");
+			String JSESSIONID = ""+getRequest().getSession().getAttribute("JSESSIONID");
 			renderJson(JSON.toJSONString(script.execute(JSESSIONID)));
 		} else {
 			renderJson(ReturnValue.std_fail("找不到指定脚本"));
@@ -126,7 +127,7 @@ public class ScriptController extends Controller {
 		String[] parameter = getParaValues("parameter");
 		String method = getPara("method");
 		String regex = getPara("regex");
-		String JSESSIONID = getCookie("JSESSIONID");
+		String JSESSIONID = ""+getRequest().getSession().getAttribute("JSESSIONID");
 		JSONObject result = ScriptRunner.run(JSESSIONID, url, method, parameter, regex);
 		renderJson(JSON.toJSONString(result));
 	}

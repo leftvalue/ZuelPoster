@@ -9,6 +9,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.safety.Whitelist;
 
+import com.alibaba.fastjson.JSONObject;
+import com.jfinal.json.Json;
+
 import org.jsoup.Connection.Response;
 
 public class Core {
@@ -49,7 +52,7 @@ public class Core {
 	}
 
 	@SuppressWarnings("unused")
-	public static String login(String encoded, String xcode, String jsessionid) throws Exception {
+	public static JSONObject login(String encoded, String xcode, String jsessionid) throws Exception {
 		Document document = Jsoup.connect(loginurl).data("encoded", encoded).data("RANDOMCODE", xcode)
 				.cookie("JSESSIONID", jsessionid).timeout(maxtime).post();
 		String info = "";
@@ -61,7 +64,10 @@ public class Core {
 		 * 登录成功，重设jsessionid
 		 */
 		String ori_html_kb = Jsoup.clean(kb.html(), Whitelist.relaxed());
-		return "{\"info\":\"" + info + "\",\"data\":" + "\"暂无\"}";
+		JSONObject object = new JSONObject();
+		object.put("info", info);
+		object.put("data", "暂无");
+		return object;
 	}
 
 }

@@ -3,7 +3,11 @@ package com.leftvalue.controller;
 import java.io.File;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.Controller;
 
 import top.leftvalue.login.Core;
@@ -50,12 +54,18 @@ public class LoginController extends Controller {
 			renderText("-1");
 		} else {
 			try {
-				String username = Core.login(encoded, xcode, jsessionid);
-				setCookie("JSESSIONID", jsessionid, 3600);
-				setCookie("username", username, 3600);
-				setCookie("number",number,3600);
-				renderJson(username);
+				JSONObject object = Core.login(encoded, xcode, jsessionid);
+				HttpServletRequest request = getRequest();
+				HttpSession session = request.getSession();
+				session.setAttribute("JSESSIONID", jsessionid);
+				session.setAttribute("username", object.getString("info"));
+				session.setAttribute("number", number);
+				// setCookie("JSESSIONID", jsessionid, 3600);
+				// setCookie("username", object.getString("info"), 3600);
+				// setCookie("number", number, 3600);
+				renderJson(JSON.toJSONString(object));
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.err.println("~登录失败");
 				renderText("-1");
 			}
